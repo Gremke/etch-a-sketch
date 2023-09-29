@@ -1,0 +1,34 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+  height: 100vh;
+}
+
+.container {
+  border: 1px solid black;
+  width: 492px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  margin: 0;
+  padding: 0;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+}
+
+.box:hover {
+  background-color: black;
+  
+}
+
+.colored {
+  background-color: black;
+}
