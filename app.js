@@ -1,15 +1,15 @@
 // Create a webpage with a 16x16 grid of square divs.
 
-const newSketch = () => {
+const newGrid = () => {
   let box = document.createElement('div');
   box.className = "box"
   return box;
 };
 
-const container = document.querySelector('.container');
+const gridContainer = document.querySelector('.grid-container');
 for (i = 0; i < 1599; i++) {
-  const div = newSketch();
-  container.appendChild(div);
+  const div = newGrid();
+  gridContainer.appendChild(div);
 };
 
 const boxes = document.querySelectorAll('.box');
