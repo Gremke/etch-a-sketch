@@ -1,25 +1,38 @@
 const gridContainer = document.getElementById('gridContainer');
-const columns = 30;
-const rows = 30;
 const gridItem = document.createElement('div');
 const gridItems = document.querySelectorAll('.gridItem');
+const slider = document.getElementById('slider');
+let sliderValue = document.getElementById('value');
+let columns = 16;
+let rows = 16;
 
+slider.addEventListener('change', () => {
+  columns = Number(slider.value);
+  rows = Number(slider.value);
+  sliderValue.textContent = slider.value;
+  clearGrid();
+  setGrid(columns, rows)
+})
 
 const setGrid = (columns, rows) => {
   gridContainer.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
   gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`; // Adjust height as needed
+
+  for (i = 0; i < columns * rows; i++) {
+    gridItem.classList.add('gridItem');
+    const gridCell = createGridCells();
+    gridContainer.appendChild(gridCell);
+  }
 };
 
-const newGrid = () => {
+const createGridCells = () => {
   let cell = document.createElement('div');
   cell.className = "cell"
   return cell;
 };
 
-for (i = 0; i < columns * rows; i++) {
-  gridItem.classList.add('gridItem');
-  const gridCell = newGrid();
-  gridContainer.appendChild(gridCell);
+const clearGrid = () => {
+  gridContainer.innerHTML = '';
 }
 
 gridItems.forEach((gridItem) => {
