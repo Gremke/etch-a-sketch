@@ -1,3 +1,9 @@
+:root {
+  --main-bg-color: rgb(185, 185, 185);
+  --grid-bg-color: white;
+  background-color: var(--main-bg-color);
+}
+
 html,
 body {
   display: flex;
@@ -8,15 +14,14 @@ body {
   height: 100%;
 }
 
+/* Grid */
 #gridContainer {
   border: 1px solid black;
   width: 550px;
   height: 550px;
   display: grid;
-}
-
-.gridItem {
-  border: 1px solid black;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+  background-color: var(--grid-bg-color)
 }
 
 .cell {
@@ -30,3 +35,42 @@ body {
 .colored {
   color: black;
 }
+
+/* Slider */
+.range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+#value {
+  font-size: 20px;
+}
+
+.slider {
+  appearance: none;
+  background: rgb(255, 255, 255);
+  opacity: 0.7;
+  transition: opacity .2s;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+  margin: 15px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; 
+  background: black;
+  cursor: pointer;
+}
+
+.slider:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+

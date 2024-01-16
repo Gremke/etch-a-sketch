@@ -19,7 +19,6 @@ const setGrid = (columns, rows) => {
   gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`; // Adjust height as needed
 
   for (i = 0; i < columns * rows; i++) {
-    gridItem.classList.add('gridItem');
     const gridCell = createGridCells();
     gridContainer.appendChild(gridCell);
   }
