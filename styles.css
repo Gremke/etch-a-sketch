@@ -24,16 +24,12 @@ body {
   background-color: var(--grid-bg-color)
 }
 
-.cell {
+.gridItem {
   border: 1px solid black;
 }
 
-.cell:hover {
+.color {
   background-color: black;
-}
-
-.colored {
-  color: black;
 }
 
 /* Slider */

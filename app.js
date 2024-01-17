@@ -1,6 +1,4 @@
 const gridContainer = document.getElementById('gridContainer');
-const gridItem = document.createElement('div');
-const gridItems = document.querySelectorAll('.gridItem');
 const slider = document.getElementById('slider');
 let sliderValue = document.getElementById('value');
 let columns = 16;
@@ -22,26 +20,27 @@ const setGrid = (columns, rows) => {
     const gridCell = createGridCells();
     gridContainer.appendChild(gridCell);
   }
+
+  const gridItems = document.querySelectorAll('.gridItem');
+  gridItems.forEach((gridItem) => {
+    gridItem.addEventListener('mouseover', () => {
+      if (gridItem.classList.contains('color')) {
+        gridItem.classList.remove('color')
+      } else {
+        gridItem.classList.add('color')
+      }
+    });
+  });
 };
 
 const createGridCells = () => {
   let cell = document.createElement('div');
-  cell.className = "cell"
+  cell.className = "gridItem"
   return cell;
 };
 
 const clearGrid = () => {
   gridContainer.innerHTML = '';
 }
-
-gridItems.forEach((gridItem) => {
-  gridItem.addEventListener('mouseover', () => {
-    if (gridItem.classList.contains('colored')) {
-      gridItem.classList.remove('colored')
-    } else {
-      gridItem.classList.add('colored')
-    }
-  });
-});
 
 setGrid(columns, rows);
